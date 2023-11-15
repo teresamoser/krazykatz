@@ -1,0 +1,48 @@
+{
+  "name": "cse341-krazykatz-code",
+  "version": "1.0.0",
+  "description": "The team Project for people who love animals -Krazy katz Project API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "dev_start": "node server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "swagger": "node ./swagger.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kiyoos/krazykatz.git"
+  },
+  "author": "Nina Saunders, Juliana Lemos, Teresa Moser, Minhah Chavez and Hugo L. Almeida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kiyoos/krazykatz/issues"
+  },
+  "homepage": "https://github.com/Kiyoos/krazykatz#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-oauth2-jwt-bearer": "^1.6.0",
+    "express-openid-connect": "^2.17.0",
+    "mongodb": "^6.1.0",
+    "mongoose": "^7.5.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "validatorjs": "^3.22.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3",
+    "swagger-autogen": "^2.23.6",
+    "typescript": "^5.2.2"
+  }
+}

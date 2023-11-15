@@ -1,0 +1,899 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Krazy Katz",
+        "description": "Pet owners and Veterinarians can add information about their pets, obtain expert advice, and schedule appointments.",
+        "version": "1.0.0"
+    },
+    "host": "krazykatz.onrender.com",
+    "basePath": "/",
+    "schemes": [
+        "https"
+    ],
+    "tags": [
+        {
+            "name": "Pets",
+            "description": "Everything about the Pets"
+        },
+        {
+            "name": "Appointments",
+            "description": "Everything about the Appointments"
+        },
+        {
+            "name": "Users",
+            "description": "Everything about the Users"
+        },
+        {
+            "name": "Veterinarians",
+            "description": "Everything about the Users"
+        },
+        {
+            "name": "Profile",
+            "description": "Check Profile"
+        }
+    ],
+    "paths": {
+        "/api-docs": {
+            "get": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/profile": {
+            "get": {
+                "tags": [
+                    "Profile"
+                ],
+                "description": "Check profile",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/pet/": {
+            "get": {
+                "tags": [
+                    "Pets"
+                ],
+                "description": "Gets all pets",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "/pet/{petId}": {
+                "get": {
+                    "tags": [
+                        "Pets"
+                    ],
+                    "description": "Get pet by ID",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "in": "path",
+                            "description": "ID of the Pet",
+                            "required": true,
+                            "type": "string"
+                        }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "OK"
+                        },
+                        "404": {
+                            "description": "Pet not found"
+                        },
+                        "500": {
+                            "description": "Internal Server Error"
+                        }
+                    }
+                },
+                "/pet/findBySpecies": {
+                    "get": {
+                        "tags": [
+                            "Pets"
+                        ],
+                        "description": "Gets all pets by species",
+                        "produces": [
+                            "application/json"
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "OK"
+                            },
+                            "500": {
+                                "description": "Internal Server Error"
+                            }
+                        }
+                    },
+                    "/pet/findByOwner": {
+                        "get": {
+                            "tags": [
+                                "Pets"
+                            ],
+                            "description": "Gets all pets by owner",
+                            "produces": [
+                                "application/json"
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "OK"
+                                },
+                                "500": {
+                                    "description": "Internal Server Error"
+                                }
+                            }
+                        },
+                        "post": {
+                            "tags": [
+                                "Pets"
+                            ],
+                            "description": "Creates a new pet",
+                            "parameters": [
+                                {
+                                    "in": "body",
+                                    "name": "pet",
+                                    "description": "pet object",
+                                    "required": true,
+                                    "schema": {
+                                        "$ref": "#/parameters/PetData"
+                                    }
+                                }
+                            ],
+                            "responses": {
+                                "201": {
+                                    "description": "Created"
+                                },
+                                "500": {
+                                    "description": "Internal Server Error"
+                                }
+                            }
+                        }
+                    },
+                    "put": {
+                        "tags": [
+                            "Pets"
+                        ],
+                        "description": "Update pet by ID",
+                        "parameters": [
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "description": "ID of the pet",
+                                "required": true,
+                                "type": "string"
+                            },
+                            {
+                                "in": "body",
+                                "name": "pet",
+                                "description": "Updated pet object",
+                                "required": true,
+                                "schema": {
+                                    "$ref": "#/parameters/PetData"
+                                }
+                            }
+                        ],
+                        "responses": {
+                            "204": {
+                                "description": "No Content"
+                            },
+                            "404": {
+                                "description": "Pet not found"
+                            },
+                            "500": {
+                                "description": "Internal Server Error"
+                            }
+                        }
+                    },
+                    "delete": {
+                        "tags": [
+                            "Pets"
+                        ],
+                        "description": "Delete pet by ID",
+                        "parameters": [
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "description": "ID of the pet",
+                                "required": true,
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "OK"
+                            },
+                            "404": {
+                                "description": "Pet not found"
+                            },
+                            "500": {
+                                "description": "Internal Server Error"
+                            }
+                        }
+                    }
+                },
+                "/appointment/": {
+                    "get": {
+                        "tags": [
+                            "Appointments"
+                        ],
+                        "description": "Gets all appointments",
+                        "produces": [
+                            "application/json"
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "OK"
+                            },
+                            "500": {
+                                "description": "Internal Server Error"
+                            }
+                        }
+                    },
+                    "/appointment/{appointmentId}": {
+                        "get": {
+                            "tags": [
+                                "Appointments"
+                            ],
+                            "description": "Get appointment by ID",
+                            "produces": [
+                                "application/json"
+                            ],
+                            "parameters": [
+                                {
+                                    "name": "id",
+                                    "in": "path",
+                                    "description": "ID of the Appointment",
+                                    "required": true,
+                                    "type": "string"
+                                }
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "OK"
+                                },
+                                "404": {
+                                    "description": "Appointment not found"
+                                },
+                                "500": {
+                                    "description": "Internal Server Error"
+                                }
+                            }
+                        },
+                        "post": {
+                            "tags": [
+                                "Appointments"
+                            ],
+                            "description": "Creates a new appointment",
+                            "parameters": [
+                                {
+                                    "in": "body",
+                                    "name": "appointment",
+                                    "description": "appointment object",
+                                    "required": true,
+                                    "schema": {
+                                        "$ref": "#/parameters/AppointmentData"
+                                    }
+                                }
+                            ],
+                            "responses": {
+                                "201": {
+                                    "description": "Created"
+                                },
+                                "500": {
+                                    "description": "Internal Server Error"
+                                }
+                            }
+                        }
+                    },
+                    "put": {
+                        "tags": [
+                            "Appointments"
+                        ],
+                        "description": "Update appointment by ID",
+                        "parameters": [
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "description": "ID of the appointment",
+                                "required": true,
+                                "type": "string"
+                            },
+                            {
+                                "in": "body",
+                                "name": "appointment",
+                                "description": "Updated appointment object",
+                                "required": true,
+                                "schema": {
+                                    "$ref": "#/parameters/AppointmentData"
+                                }
+                            }
+                        ],
+                        "responses": {
+                            "204": {
+                                "description": "No Content"
+                            },
+                            "404": {
+                                "description": "Appointment not found"
+                            },
+                            "500": {
+                                "description": "Internal Server Error"
+                            }
+                        }
+                    },
+                    "delete": {
+                        "tags": [
+                            "Appointments"
+                        ],
+                        "description": "Delete appointment by ID",
+                        "parameters": [
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "description": "ID of the appointment",
+                                "required": true,
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "OK"
+                            },
+                            "404": {
+                                "description": "Appointment not found"
+                            },
+                            "500": {
+                                "description": "Internal Server Error"
+                            }
+                        }
+                    }
+                },
+                "/user/login": {
+                    "get": {
+                        "tags": [
+                            "Users"
+                        ],
+                        "summary": "Logs user into the system",
+                        "operationId": "loginUser",
+                        "produces": [
+                            "application/json"
+                        ],
+                        "parameters": [
+                            {
+                                "name": "username",
+                                "in": "query",
+                                "description": "The user name for login",
+                                "required": true,
+                                "type": "string"
+                            },
+                            {
+                                "name": "password",
+                                "in": "query",
+                                "description": "The password for login in clear text",
+                                "required": true,
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "successful operation",
+                                "headers": {
+                                    "X-Rate-Limit": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "calls per hour allowed by the user"
+                                    },
+                                    "X-Expires-After": {
+                                        "type": "string",
+                                        "format": "date-time",
+                                        "description": "date in UTC when token expires"
+                                    }
+                                },
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "400": {
+                                "description": "Invalid username/password supplied"
+                            }
+                        }
+                    }
+                },
+                "/user/logout": {
+                    "get": {
+                        "tags": [
+                            "Users"
+                        ],
+                        "summary": "Logs out current logged in user session",
+                        "operationId": "logoutUser",
+                        "produces": [
+                            "application/json"
+                        ],
+                        "parameters": [],
+                        "responses": {
+                            "default": {
+                                "description": "successful operation"
+                            }
+                        }
+                    }
+                },
+                "/user/{userId}": {
+                    "get": {
+                        "tags": [
+                            "Users"
+                        ],
+                        "description": "Get user by ID",
+                        "produces": [
+                            "application/json"
+                        ],
+                        "parameters": [
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "description": "ID of the User",
+                                "required": true,
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "OK"
+                            },
+                            "404": {
+                                "description": "User not found"
+                            },
+                            "500": {
+                                "description": "Internal Server Error"
+                            }
+                        }
+                    },
+                    "post": {
+                        "tags": [
+                            "Users"
+                        ],
+                        "description": "Creates a new user",
+                        "parameters": [
+                            {
+                                "in": "body",
+                                "name": "user",
+                                "description": "user object",
+                                "required": true,
+                                "schema": {
+                                    "$ref": "#/parameters/UserData"
+                                }
+                            }
+                        ],
+                        "responses": {
+                            "201": {
+                                "description": "Created"
+                            },
+                            "500": {
+                                "description": "Internal Server Error"
+                            }
+                        }
+                    }
+                },
+                "put": {
+                    "tags": [
+                        "Users"
+                    ],
+                    "description": "Update user by ID",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "in": "path",
+                            "description": "ID of the user",
+                            "required": true,
+                            "type": "string"
+                        },
+                        {
+                            "in": "body",
+                            "name": "user",
+                            "description": "Updated user object",
+                            "required": true,
+                            "schema": {
+                                "$ref": "#/parameters/UserData"
+                            }
+                        }
+                    ],
+                    "responses": {
+                        "204": {
+                            "description": "No Content"
+                        },
+                        "404": {
+                            "description": "User not found"
+                        },
+                        "500": {
+                            "description": "Internal Server Error"
+                        }
+                    }
+                },
+                "delete": {
+                    "tags": [
+                        "Users"
+                    ],
+                    "description": "Delete user by ID",
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "in": "path",
+                            "description": "ID of the user",
+                            "required": true,
+                            "type": "string"
+                        }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "OK"
+                        },
+                        "404": {
+                            "description": "User not found"
+                        },
+                        "500": {
+                            "description": "Internal Server Error"
+                        }
+                    }
+                }
+            },
+            "/veterinarian/login": {
+                "get": {
+                    "tags": [
+                        "Veterinarians"
+                    ],
+                    "summary": "Logs veterinarian into the system",
+                    "operationId": "loginVeterinarian",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "parameters": [
+                        {
+                            "name": "veterinarianname",
+                            "in": "query",
+                            "description": "The veterinarian name for login",
+                            "required": true,
+                            "type": "string"
+                        },
+                        {
+                            "name": "password",
+                            "in": "query",
+                            "description": "The password for login in clear text",
+                            "required": true,
+                            "type": "string"
+                        }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "successful operation",
+                            "headers": {
+                                "X-Rate-Limit": {
+                                    "type": "integer",
+                                    "format": "int32",
+                                    "description": "calls per hour allowed by the veterinarian"
+                                },
+                                "X-Expires-After": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "date in UTC when token expires"
+                                }
+                            },
+                            "schema": {
+                                "type": "string"
+                            }
+                        },
+                        "400": {
+                            "description": "Invalid veterinarianname/password supplied"
+                        }
+                    }
+                }
+            },
+            "/uveterinarian/logout": {
+                "get": {
+                    "tags": [
+                        "Veterinarians"
+                    ],
+                    "summary": "Logs out current logged in veterinarian session",
+                    "operationId": "logoutVeterinarian",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "parameters": [],
+                    "responses": {
+                        "default": {
+                            "description": "successful operation"
+                        }
+                    }
+                }
+            },
+            "/veterinarian/{veterinarianId}": {
+                "get": {
+                    "tags": [
+                        "Veterinarians"
+                    ],
+                    "description": "Get veterinarian by ID",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "in": "path",
+                            "description": "ID of the Veterinarian",
+                            "required": true,
+                            "type": "string"
+                        }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "OK"
+                        },
+                        "404": {
+                            "description": "Veterinarian not found"
+                        },
+                        "500": {
+                            "description": "Internal Server Error"
+                        }
+                    }
+                },
+                "post": {
+                    "tags": [
+                        "Veterinarians"
+                    ],
+                    "description": "Creates a new veterinarian",
+                    "parameters": [
+                        {
+                            "in": "body",
+                            "name": "veterinarian",
+                            "description": "veterinarian object",
+                            "required": true,
+                            "schema": {
+                                "$ref": "#/parameters/VeterinarianData"
+                            }
+                        }
+                    ],
+                    "responses": {
+                        "201": {
+                            "description": "Created"
+                        },
+                        "500": {
+                            "description": "Internal Server Error"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Veterinarians"
+                ],
+                "description": "Update veterinarian by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the veterinarian",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "veterinarian",
+                        "description": "Updated veterinarian object",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/parameters/VeterinarianData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "404": {
+                        "description": "Veterinarian not found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Veterinarians"
+                ],
+                "description": "Delete veterinarian by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the veterinarian",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Veterinarian not found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "PetData": {
+                "name": "pet",
+                "in": "body",
+                "description": "Pet data",
+                "required": true,
+                "schema": {
+                    "$ref": "#/definitions/Pet"
+                }
+            },
+            "AppointmentData": {
+                "name": "appointment",
+                "in": "body",
+                "description": "Appointment data",
+                "required": true,
+                "schema": {
+                    "$ref": "#/definitions/Appointment"
+                }
+            },
+            "UserData": {
+                "name": "user",
+                "in": "body",
+                "description": "User data",
+                "required": true,
+                "schema": {
+                    "$ref": "#/definitions/User"
+                }
+            },
+            "VeterinarianData": {
+                "name": "veterinarian",
+                "in": "body",
+                "description": "Veterinarian data",
+                "required": true,
+                "schema": {
+                    "$ref": "#/definitions/Veterinarian"
+                }
+            },
+            "definitions": {
+                "Pet": {
+                    "type": "object",
+                    "properties": {
+                        "_id": {
+                            "type": "string"
+                        },
+                        "owner": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "species": {
+                            "type": "string"
+                        },
+                        "breed": {
+                            "type": "string"
+                        },
+                        "age": {
+                            "type": "integer"
+                        },
+                        "medicalHistory": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/MedicalRecord"
+                            }
+                        }
+                    }
+                },
+                "MedicalRecord": {
+                    "type": "object",
+                    "properties": {
+                        "vaccineType": {
+                            "type": "string"
+                        },
+                        "date": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "secondDose": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "vaccineType",
+                        "date",
+                        "secondDose"
+                    ]
+                }
+            }
+        },
+        "definitions": {
+            "Appointment": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "user": {
+                        "type": "string"
+                    },
+                    "veterinarian": {
+                        "type": "string"
+                    },
+                    "dateAndTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "purpose": {
+                        "type": "string"
+                    }
+                }
+            },
+            "User": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "contactInformation": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Veterinarian": {
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "specialization": {
+                        "type": "string"
+                    },
+                    "contactInformation": {
+                        "type": "string"
+                    },
+                    "availability": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
