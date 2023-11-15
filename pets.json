@@ -1,0 +1,47 @@
+[
+    {
+        "owner":"The Rock Johnson",
+        "name":"Chleo", 
+        "species":"Cat", 
+        "breed":"Tabby",
+        "age":"1 year", 
+        "weight":"2 lbs",
+        "medicalHistory":[" "]
+    },
+    {
+        "owner":" ",
+        "name":" ", 
+        "species":" ", 
+        "breed":" ",
+        "age":" ", 
+        "weight":" ",
+        "medicalHistory":[" "]
+    },
+    {
+        "owner":" ",
+        "name":" ", 
+        "species":" ", 
+        "breed":" ",
+        "age":" ", 
+        "weight":" ",
+        "medicalHistory":[" "]
+    },
+    {
+        "owner":" ",
+        "name":" ", 
+        "species":" ", 
+        "breed":" ",
+        "age":" ", 
+        "weight":" ",
+        "medicalHistory":[" "]
+    },
+    {
+        "owner":" ",
+        "name":" ", 
+        "species":" ", 
+        "breed":" ",
+        "age":" ", 
+        "weight":" ",
+        "medicalHistory":[" "]
+    }
+]
