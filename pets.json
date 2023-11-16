@@ -2,46 +2,81 @@
     {
         "owner":"The Rock Johnson",
         "name":"Chleo", 
-        "species":"Cat", 
+        "species":"Feline", 
         "breed":"Tabby",
         "age":"1 year", 
-        "weight":"2 lbs",
-        "medicalHistory":[" "]
+        "weight":"3 lbs",
+        "medicalHistory":
+        [
+            {
+                "vaccineType":"Feline Leukemia Virus",
+                "date":"3/8/2023",
+                "secondDose":"3/15/2025"
+            }
+        ]
     },
     {
-        "owner":" ",
-        "name":" ", 
-        "species":" ", 
-        "breed":" ",
-        "age":" ", 
-        "weight":" ",
-        "medicalHistory":[" "]
+        "owner":"Moana",
+        "name":"Hey Hey", 
+        "species":"Gallus gallus domesticus", 
+        "breed":"Rhode Island Red",
+        "age":"2 years", 
+        "weight":"3 lbs",
+        "medicalHistory":
+        [
+            {
+                "vaccineType":"Rabies",
+                "date":"5/24/2023",
+                "secondDose":"5/24/2025"
+            }
+        ]
     },
     {
-        "owner":" ",
-        "name":" ", 
-        "species":" ", 
-        "breed":" ",
-        "age":" ", 
-        "weight":" ",
-        "medicalHistory":[" "]
+        "owner":"Darling",
+        "name":"Lady", 
+        "species":"Canine", 
+        "breed":"American Cocker Spaniel",
+        "age":"2 years", 
+        "weight":"5 lbs 20 oz",
+        "medicalHistory":
+        [
+            {
+                "vaccineType":"Parvovirus",
+                "date":"1/18/2023",
+                "secondDose":"1/20/2024"
+            }
+        ]
     },
     {
-        "owner":" ",
-        "name":" ", 
-        "species":" ", 
-        "breed":" ",
-        "age":" ", 
-        "weight":" ",
-        "medicalHistory":[" "]
+        "owner":"Data",
+        "name":"Spot", 
+        "species":"Feline", 
+        "breed":"Long Hair Somali",
+        "age":"3 years", 
+        "weight":"2 lbs 13 oz",
+        "medicalHistory":
+        [
+            {
+                "vaccineType":"Distemper",
+                "date":"10/17/2021",
+                "secondDose":"10/17/2024"
+            }
+        ]
     },
     {
-        "owner":" ",
-        "name":" ", 
-        "species":" ", 
-        "breed":" ",
-        "age":" ", 
-        "weight":" ",
-        "medicalHistory":[" "]
+        "owner":"John Arble",
+        "name":"Wilber", 
+        "species":"Pig", 
+        "breed":"Yorkshire White",
+        "age":"1 year", 
+        "weight":"80 lbs",
+        "medicalHistory": 
+        [
+            {
+                "vaccineType":"Lyme Disease",
+                "date":"6/16/2022",
+                "secondDose":"6/20/2024"
+            }
+        ]
     }
 ]

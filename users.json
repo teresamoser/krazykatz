@@ -1,32 +1,32 @@
 [
     {
-        "userName":" ",
-        "password":" ", 
-        "email":" ", 
-        "contactInfo":" "
+        "username":"jrock",
+        "password":"k!tTy8", 
+        "email":"maori@gmail.com", 
+        "contactInformation":"Phone: 803-333-2739"
     },
     {
-        "userName":" ",
-        "password":" ", 
-        "email":" ", 
-        "contactInfo":" "
+        "username":"queenie",
+        "password":"rOo$t3r", 
+        "email":"moanaq@hotmail.com", 
+        "contactInformation":"206-133-3339"
     },
     {
-        "userName":" ",
-        "password":" ", 
-        "email":" ", 
-        "contactInfo":" "
+        "username":"sweetheart",
+        "password":"d0gGon3&", 
+        "email":"darling@victorian.era", 
+        "contactInformation":"555-888-0099"
     },
     {
-        "userName":" ",
-        "password":" ", 
-        "email":" ", 
-        "contactInfo":" "
+        "username":"trekie",
+        "password":"Ncc-1701", 
+        "email":"data@enterprise.com", 
+        "contactInformation":"2223-4355"
     },
     {
-        "userName":" ",
-        "password":" ", 
-        "email":" ", 
-        "contactInfo":" "
+        "username":"johna",
+        "password":"$om3Pig", 
+        "email":"wilber@farm.org", 
+        "contactInformation":"123-456-7890"
     }
 ]
