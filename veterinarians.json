@@ -1,32 +1,32 @@
 [
     {
-        "name":" ",
-        "specialization":" ", 
-        "contactInfo":" ", 
-        "availability":" "
+        "name":"Dr. Kelly Parnell",
+        "specialization":"Soft Tissue Surgery", 
+        "contactInformation":"Phone: 208-398-5938", 
+        "availability":"Mon-Fri: 8:00am-5:30pm"
     },
     {
-        "name":" ",
-        "specialization":" ", 
-        "contactInfo":" ", 
-        "availability":" "
+        "name":"Dr. Mike Nield",
+        "specialization":"Laser Therapy", 
+        "contactInformation":"Phone: 208-523-2513", 
+        "availability":"Mon-Fri: 8:00am-5:30pm"
     },
     {
-        "name":" ",
-        "specialization":" ", 
-        "contactInfo":" ", 
-        "availability":" "
+        "name":"Dr. Nathan Rolston",
+        "specialization":"Laceration and Wound Repair", 
+        "contactInformation":"Phone: 208-522-8010", 
+        "availability":"Mon-Fri: 7:30am-6:00pm"
     },
     {
-        "name":" ",
-        "specialization":" ", 
-        "contactInfo":" ", 
-        "availability":" "
+        "name":"Dr. Kathy Shoemaker",
+        "specialization":"Behavioral Medicine", 
+        "contactInformation":"Phone: 208-529-2217", 
+        "availability":"Mon-Fri: 7:45am-6:00pm"
     },
     {
-        "name":" ",
-        "specialization":" ", 
-        "contactInfo":" ", 
-        "availability":" "
+        "name":"Dr. Susie Mackin ",
+        "specialization":"Exotic Pets", 
+        "contactInformation":"Phone: 208-557-3113", 
+        "availability":"Mon-Fri: 8:00am-5:30pm"
     }
 ]

@@ -801,6 +801,9 @@
                         "age": {
                             "type": "integer"
                         },
+                        "weight": {
+                            "type": "integer"
+                        },
                         "medicalHistory": {
                             "type": "array",
                             "items": {
