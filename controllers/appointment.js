@@ -4,7 +4,6 @@
 // PUT /appointment/{appointmentId}
 // DELETE /appointment/{appointmentId}
 
-
 // Importing Dependencies:
 const mongodb = require('../db/connect'); // is a reference to my database connection
 const ObjectId = require('mongodb').ObjectId; // is a type provided by the MongoDB driver. Allows me to work with MongoDB's unique identifiers.
@@ -32,7 +31,12 @@ const getSingleAppointment = async (req, res, next) => {
   try {
     // add the database
     const appointmentId = new ObjectId(req.params.id);
-    const result = await mongodb.getDb().db().collection('appointments').find({ _id: appointmentId }).toArray();
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection('appointments')
+      .find({ _id: appointmentId })
+      .toArray();
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result[0]);
   } catch (error) {
@@ -41,20 +45,26 @@ const getSingleAppointment = async (req, res, next) => {
   }
 };
 
-// Create a POST const 
+// Create a POST const
 const createAppointment = async (req, res) => {
   try {
     // Check if user is authenticated (To be used with OAuth)
-    if (!req.oidc.isAuthenticated()) {
-      return errorResponse(res, 401, 'Unauthorized. Please login to schedule an appointment.');
-    }
+    // if (!req.oidc.isAuthenticated()) {
+    //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule an appointment.');
+    // }
     // add the database
     const appointment = req.body;
-    const response = await mongodb.getDb().db().collection('appointments').insertOne({ appointment });
+    const response = await mongodb
+      .getDb()
+      .db()
+      .collection('appointments')
+      .insertOne({ appointment });
 
     if (response.acknowledged) {
       const newAppointmentId = response.insertedId;
-      res.status(201).json({ message: 'Appointments created successfully', AppointmentId: newAppointmentId });
+      res
+        .status(201)
+        .json({ message: 'Appointments created successfully', AppointmentId: newAppointmentId });
     } else {
       errorResponse(res, 500, 'Failed to create Appointment');
     }
@@ -75,7 +85,11 @@ const updateAppointment = async (req, res, next) => {
     const appointmentId = new ObjectId(req.params.id);
     const updatedAppointment = req.body;
     // add the database
-    const response = await mongodb.getDb().db().collection('appointments').updateOne({ _id: appointmentId }, { $set: { appointment: updatedAppointment }});
+    const response = await mongodb
+      .getDb()
+      .db()
+      .collection('appointments')
+      .updateOne({ _id: appointmentId }, { $set: { appointment: updatedAppointment } });
 
     if (response.matchedCount === 1 && response.modifiedCount === 1) {
       res.status(204).json({ message: 'Appointment updated successfully' });
@@ -97,7 +111,11 @@ const deleteAppointment = async (req, res, next) => {
     }
     // add the database
     const appointmentId = new ObjectId(req.params.id);
-    const response = await mongodb.getDb().db().collection('appointments').deleteOne({ _id: appointmentId });
+    const response = await mongodb
+      .getDb()
+      .db()
+      .collection('appointments')
+      .deleteOne({ _id: appointmentId });
 
     if (response.deletedCount === 1) {
       res.status(200).json({ message: 'Appointment deleted successfully' });
@@ -110,4 +128,10 @@ const deleteAppointment = async (req, res, next) => {
   }
 };
 
-module.exports = { getAllAppointments, getSingleAppointment, createAppointment, updateAppointment, deleteAppointment };
+module.exports = {
+  getAllAppointments,
+  getSingleAppointment,
+  createAppointment,
+  updateAppointment,
+  deleteAppointment
+};
