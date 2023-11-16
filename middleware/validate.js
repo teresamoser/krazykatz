@@ -12,6 +12,29 @@ const checkId = (req, res, next) => {
   }
 };
 
-module.exports = {
-  checkId
+const saveAppointment = (req, res, next) => {
+  const validationRule = {
+    dateTime: 'required|string',
+    purpose: 'required|string|max:500',
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(400).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
 };
+
+// app.get('/profile', requiresAuth(), (req, res) => {
+//   res.send(JSON.stringify(req.oidc.user));
+// });
+
+module.exports = {
+  checkId,
+  saveAppointment
+}
