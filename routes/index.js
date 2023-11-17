@@ -5,17 +5,17 @@ const router = express.Router();
 // const auth0Controller = require('../controllers/auth0');
 
 const swagger = require('./swagger');
-const appointment = require('./appointment');
+const appointments = require('./appointments');
 // const pets = require('./pets');
 // const users = require('./users');
-// const veterinarian = require('./veterinarian');
+// const veterinarians = require('./veterinarians');
 const homeController = require('../controllers/index');
 
 router.use('/api-docs', swagger);
-router.use('/appointments', appointment);
+router.use('/appointments', appointments);
 // router.use('/pets', pets);
 // router.use('/users', users);
-// router.use('/veterinarian', veterinarian);
+// router.use('/veterinarians', veterinarians);
 router.use('/', homeController.home);
 
 // DO NOT UNCOMMENT until Auth0 is working -Nina

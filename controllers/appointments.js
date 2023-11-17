@@ -106,9 +106,9 @@ const updateAppointment = async (req, res, next) => {
 const deleteAppointment = async (req, res, next) => {
   try {
     // Check if user is authenticated
-    if (!req.oidc.isAuthenticated()) {
-      return errorResponse(res, 401, 'Unauthorized. Please login to delete an appointment.');
-    }
+    // if (!req.oidc.isAuthenticated()) {
+    //   return errorResponse(res, 401, 'Unauthorized. Please login to delete an appointment.');
+    // }
     // add the database
     const appointmentId = new ObjectId(req.params.id);
     const response = await mongodb

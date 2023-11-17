@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const appointmentController = require('../controllers/appointment');
+const appointmentController = require('../controllers/appointments');
 // const validation = require('../middleware/validate'); ADD BACK IN when middleware is set up - Nina
 
 router.get('/', appointmentController.getAllAppointments);
