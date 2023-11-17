@@ -1,4 +1,4 @@
-// const validate = require('../helpers/validate');
+const validator = require('../helpers/validate');
 const ObjectId = require('mongodb').ObjectId;
 // const { requiresAuth } = require('express-openid-connect');
 
@@ -15,7 +15,7 @@ const checkId = (req, res, next) => {
 const saveAppointment = (req, res, next) => {
   const validationRule = {
     dateTime: 'required|string',
-    purpose: 'required|string|max:500',
+    purpose: 'required|string|max:500'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
@@ -37,4 +37,4 @@ const saveAppointment = (req, res, next) => {
 module.exports = {
   checkId,
   saveAppointment
-}
+};
