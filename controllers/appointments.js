@@ -14,7 +14,7 @@ function errorResponse(res, statusCode, message) {
 }
 
 // Function that handles a GET request.
-const getAllAppointments = async (req, res, next) => {
+const getAllAppointments = async (req, res) => {
   try {
     // add the database
     const result = await mongodb.getDb().db().collection('appointments').find().toArray();
@@ -27,7 +27,7 @@ const getAllAppointments = async (req, res, next) => {
 };
 
 // Gets a single appointment
-const getSingleAppointment = async (req, res, next) => {
+const getSingleAppointment = async (req, res) => {
   try {
     // add the database
     const appointmentId = new ObjectId(req.params.id);
@@ -75,7 +75,7 @@ const createAppointment = async (req, res) => {
 };
 
 // Function that handles a PUT request to update a appointment.
-const updateAppointment = async (req, res, next) => {
+const updateAppointment = async (req, res) => {
   try {
     // Check if user is authenticated
     // if (!req.oidc.isAuthenticated()) {
@@ -102,7 +102,7 @@ const updateAppointment = async (req, res, next) => {
 };
 
 // Function that handles a DELETE request.
-const deleteAppointment = async (req, res, next) => {
+const deleteAppointment = async (req, res) => {
   try {
     // Check if user is authenticated
     // if (!req.oidc.isAuthenticated()) {
