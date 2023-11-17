@@ -78,10 +78,9 @@ const createAppointment = async (req, res) => {
 const updateAppointment = async (req, res, next) => {
   try {
     // Check if user is authenticated
-    if (!req.oidc.isAuthenticated()) {
-      return errorResponse(res, 401, 'Unauthorized. Please login to schedule a appointment.');
-    }
-
+    // if (!req.oidc.isAuthenticated()) {
+    //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule a appointment.');
+    // }
     const appointmentId = new ObjectId(req.params.id);
     const updatedAppointment = req.body;
     // add the database

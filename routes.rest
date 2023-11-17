@@ -15,5 +15,5 @@ content-type: application/json
   "purpose":"vaccination shots"
 }
 
-### Create new Appointment
+### Delete Appointment - MUST UPDATE ID!!!
 DELETE http://localhost:8080/appointments/65563b82b1818abe9c24f85f
