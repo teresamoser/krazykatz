@@ -5,7 +5,7 @@ const doc = {
     title: 'Krazy Katz Project API',
     description: 'Lesson 9-13 Team Project - Krazy Katz API'
   },
-  host: 'https://krazykatz.onrender.com',
+  host: 'krazykatz.onrender.com',
   schemes: ['http', 'https']
 };
 
