@@ -6,7 +6,7 @@ const doc = {
     description: 'Lesson 9-13 Team Project - Krazy Katz API'
   },
   host: 'krazykatz.onrender.com',
-  schemes: ['http', 'https']
+  schemes: ['https']
 };
 
 const outputFile = './swagger.json';

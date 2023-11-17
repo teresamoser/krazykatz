@@ -8,7 +8,6 @@
   "host": "krazykatz.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
