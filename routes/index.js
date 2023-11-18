@@ -7,14 +7,14 @@ const homeController = require('../controllers/index');
 
 const swagger = require('./swagger');
 const appointments = require('./appointments');
-// const pets = require('./pets');
+const pets = require('./pets');
 // const users = require('./users');
 // const veterinarians = require('./veterinarians');
 const auth0 = require('./auth0');
 
 router.use('/api-docs', swagger);
 router.use('/appointments', appointments);
-// router.use('/pets', pets);
+router.use('/pets', pets);
 // router.use('/users', users);
 // router.use('/veterinarians', veterinarians);
 router.use('/', homeController.home);
