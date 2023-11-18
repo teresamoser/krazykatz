@@ -17,3 +17,39 @@ content-type: application/json
 
 ### Delete Appointment - MUST UPDATE ID!!!
 DELETE http://localhost:8080/appointments/65563b82b1818abe9c24f85f
+
+
+###PETS
+
+###GET ALL PETS
+GET http://localhost:8080/pets
+
+###GET PET WITH ID
+GET http://localhost:8080/pets/6558210481cce9f258efc36d
+
+###POST A PET
+POST http://localhost:8080/pets HTTP/1.1
+content-type: application/json
+
+{
+ "owner":"The Rock Johnson",
+        "name":"Chleo", 
+        "species":"Feline", 
+        "breed":"Tabby",
+        "age":"1 year", 
+        "weight":"3 lbs",
+        "medicalHistory":
+        [
+            {
+                "vaccineType":"Feline Leukemia Virus",
+                "date":"3/8/2023",
+                "secondDose":"3/15/2025"
+            }
+        ]
+}
+
+### DELETE PET WITH ID
+DELETE  http://localhost:8080/pets/6558210481cce9f258efc36d
+
+###RENDER GET ALL PETS
+GET https://krazykatz.onrender.com/pets
