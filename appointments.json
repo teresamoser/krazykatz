@@ -1,32 +1,32 @@
 [
-    {
-        "user":"jrock",
-        "veterinarian":"Dr. Kelly Parnell", 
-        "dateAndTime":"June 20 10:00am", 
-        "purpose":"vaccination shots"
-    },
-    {
-        "user":"queenie",
-        "veterinarian":"Dr. Susie Mackin", 
-        "dateAndTime":"February 23 1:00pm", 
-        "purpose":"Sore throat"
-    },
-    {
-        "user":"sweetheart",
-        "veterinarian":"Dr. Nathan Rolston", 
-        "dateAndTime":"April 14 3:00pm", 
-        "purpose":"laserated paw"
-    },
-    {
-        "user":"trekie",
-        "veterinarian":"Dr. Mike Nield", 
-        "dateAndTime":"August 22 9:00am", 
-        "purpose":"space trauma"
-    },
-    {
-        "user":"johna",
-        "veterinarian":"Dr. Kathy shoemaker", 
-        "dateAndTime":"November 4 8:00am", 
-        "purpose":"pig behavioral issues"
-    }
+  {
+    "user": "jrock",
+    "veterinarian": "Dr. Kelly Parnell",
+    "dateAndTime": "June 20 10:00am",
+    "purpose": "vaccination shots"
+  },
+  {
+    "user": "queenie",
+    "veterinarian": "Dr. Susie Mackin",
+    "dateAndTime": "February 23 1:00pm",
+    "purpose": "Sore throat"
+  },
+  {
+    "user": "sweetheart",
+    "veterinarian": "Dr. Nathan Rolston",
+    "dateAndTime": "April 14 3:00pm",
+    "purpose": "laserated paw"
+  },
+  {
+    "user": "trekie",
+    "veterinarian": "Dr. Mike Nield",
+    "dateAndTime": "August 22 9:00am",
+    "purpose": "space trauma"
+  },
+  {
+    "user": "johna",
+    "veterinarian": "Dr. Kathy shoemaker",
+    "dateAndTime": "November 4 8:00am",
+    "purpose": "pig behavioral issues"
+  }
 ]

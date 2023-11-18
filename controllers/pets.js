@@ -25,12 +25,7 @@ const getSinglePet = async (req, res) => {
   try {
     // add the database
     const petId = new ObjectId(req.params.id);
-    const result = await mongodb
-      .getDb()
-      .db()
-      .collection('pets')
-      .find({ _id: petId })
-      .toArray();
+    const result = await mongodb.getDb().db().collection('pets').find({ _id: petId }).toArray();
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result[0]);
   } catch (error) {
@@ -48,17 +43,11 @@ const createPet = async (req, res) => {
     // }
     // add the database
     const pet = req.body;
-    const response = await mongodb
-      .getDb()
-      .db()
-      .collection('pets')
-      .insertOne({ pet });
+    const response = await mongodb.getDb().db().collection('pets').insertOne({ pet });
 
     if (response.acknowledged) {
       const newpetId = response.insertedId;
-      res
-        .status(201)
-        .json({ message: 'Pet created successfully', petId: newpetId });
+      res.status(201).json({ message: 'Pet created successfully', petId: newpetId });
     } else {
       errorResponse(res, 500, 'Failed to create pet');
     }
@@ -104,11 +93,7 @@ const deletePet = async (req, res) => {
     // }
     // add the database
     const petId = new ObjectId(req.params.id);
-    const response = await mongodb
-      .getDb()
-      .db()
-      .collection('pets')
-      .deleteOne({ _id: petId });
+    const response = await mongodb.getDb().db().collection('pets').deleteOne({ _id: petId });
 
     if (response.deletedCount === 1) {
       res.status(200).json({ message: 'Pet deleted successfully' });

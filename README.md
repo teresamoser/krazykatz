@@ -1,5 +1,6 @@
 # Krazy Katz API Project-CSE 341
-Pet owners and Veterinarians can add information about their pets, obtain expert advice, and schedule appointments.  
+
+Pet owners and Veterinarians can add information about their pets, obtain expert advice, and schedule appointments.
 
 ## Prerequisites
 
@@ -20,14 +21,17 @@ Pet owners and Veterinarians can add information about their pets, obtain expert
 - `npm run swagger` to automatically generate a new swagger.json file(if your file is already done it will rewrite it, so BE CAREFUL)
 
 ## Domain Site
+
 https://krazykatz.onrender.com
 
 ## Contributing
+
 Because it is a college project, only teammates can contribute to this project.
 
 ## Author
+
 - Juliana Lemos
 - Nina Saunders
 - Teresa Moses
-- Minhah Chavez 
+- Minhah Chavez
 - Hugo L Almeida
