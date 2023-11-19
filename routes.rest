@@ -53,3 +53,22 @@ DELETE  http://localhost:8080/pets/6558210481cce9f258efc36d
 
 ###RENDER GET ALL PETS
 GET https://krazykatz.onrender.com/pets
+
+##Veterinarians
+
+### Get All Veterinarians
+GET http://localhost:8080/veterinarians
+
+### Create new Veterinarians
+POST http://localhost:8080/veterinarians HTTP/1.1
+content-type: application/json
+
+  {
+    "name": "Dr. Kelly Parnell",
+    "specialization": "Soft Tissue Surgery",
+    "contactInformation": "Phone: 208-398-5938",
+    "availability": "Mon-Fri: 8:00am-5:30pm"
+  }
+
+### Delete Appointment - MUST UPDATE ID!!!
+DELETE http://localhost:8080/veterinarians/6555bd58cc3f5ce43626b3db
