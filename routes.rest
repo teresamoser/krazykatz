@@ -74,5 +74,5 @@ content-type: application/json
 ### Delete Appointment - MUST UPDATE ID!!!
 DELETE http://localhost:8080/veterinarians/6555bd58cc3f5ce43626b3db
 
-###RENDER GET ALL PETS
+###RENDER GET ALL VETERINARIANS
 GET https://krazykatz.onrender.com/veterinarians
