@@ -5,8 +5,8 @@ const doc = {
     title: 'Krazy Katz Project API',
     description: 'Lesson 9-13 Team Project - Krazy Katz API'
   },
-  host: 'localhost:8080',
-  schemes: ['http', 'https']
+  host: 'krazykatz.onrender.com',
+  schemes: ['https']
 };
 
 const outputFile = './swagger.json';
