@@ -1,4 +1,7 @@
 body {
+  background-image: image-set('./img/pexels-александар-цветановић-1440403.jpg');
+  }
+input{
   background-color: yellow;
-  background-image: url('./img/pexels-александар-цветановић-1440403.jpg');
-}
+  }
+
