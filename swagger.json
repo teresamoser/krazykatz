@@ -7,12 +7,38 @@
   },
   "host": "krazykatz.onrender.com",
   "basePath": "/",
-  "schemes": ["https"],
+  "tags": [
+    {
+      "name": "Appointments",
+      "description": "Keeps track of vet appointments for pets."
+    },
+    {
+      "name": "Pets",
+      "description": "Keeps track of pet information."
+    },
+    {
+      "name": "Users",
+      "description": "Keeps track of pet owners."
+    },
+    {
+      "name": "Veterinarians",
+      "description": "Keeps track of Veterinarians "
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
   "paths": {
     "/appointments/": {
       "get": {
+        "tags": [
+          "Appointments"
+        ],
+        "summary": "Gets information for all appointments.",
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -20,6 +46,10 @@
         }
       },
       "post": {
+        "tags": [
+          "Appointments"
+        ],
+        "summary": "Creates an appointment.",
         "description": "",
         "responses": {
           "201": {
@@ -30,8 +60,14 @@
     },
     "/appointments/{id}": {
       "get": {
+        "tags": [
+          "Appointments"
+        ],
+        "summary": "Gets information for a single appointment.",
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -47,6 +83,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Appointments"
+        ],
+        "summary": "Updates an appointment.",
         "description": "",
         "parameters": [
           {
@@ -63,6 +103,10 @@
         }
       },
       "delete": {
+        "tags": [
+          "Appointments"
+        ],
+        "summary": "Delets an appointment.",
         "description": "",
         "parameters": [
           {
@@ -81,8 +125,14 @@
     },
     "/pets/": {
       "get": {
+        "tags": [
+          "Pets"
+        ],
+        "summary": "Gets all pets.",
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -90,6 +140,10 @@
         }
       },
       "post": {
+        "tags": [
+          "Pets"
+        ],
+        "summary": "Creates a file for one pet.",
         "description": "",
         "responses": {
           "201": {
@@ -100,8 +154,14 @@
     },
     "/pets/{id}": {
       "get": {
+        "tags": [
+          "Pets"
+        ],
+        "summary": "Gets information for one pet.",
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -117,6 +177,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Pets"
+        ],
+        "summary": "Updates information for one pet.",
         "description": "",
         "parameters": [
           {
@@ -133,6 +197,104 @@
         }
       },
       "delete": {
+        "tags": [
+          "Pets"
+        ],
+        "summary": "Deletes information for one pet.",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/users/": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Gets all users.",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Creates a user.",
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Gets informaiton for one user.",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Updates a user.",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Deletes a user.",
         "description": "",
         "parameters": [
           {
@@ -151,8 +313,14 @@
     },
     "/veterinarians/": {
       "get": {
+        "tags": [
+          "Veterinarians"
+        ],
+        "summary": "Gets information for all Veterinarians.",
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -160,6 +328,10 @@
         }
       },
       "post": {
+        "tags": [
+          "Veterinarians"
+        ],
+        "summary": "Creates a Veterinarian file.",
         "description": "",
         "responses": {
           "201": {
@@ -170,8 +342,14 @@
     },
     "/veterinarians/{id}": {
       "get": {
+        "tags": [
+          "Veterinarians"
+        ],
+        "summary": "Gets information for a Veterinarian.",
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -187,6 +365,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Veterinarians"
+        ],
+        "summary": "Updates a Veterinarian file.",
         "description": "",
         "parameters": [
           {
@@ -203,6 +385,10 @@
         }
       },
       "delete": {
+        "tags": [
+          "Veterinarians"
+        ],
+        "summary": "Delete a Veterinarian file.",
         "description": "",
         "parameters": [
           {

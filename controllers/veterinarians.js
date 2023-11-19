@@ -11,6 +11,12 @@ function errorResponse(res, statusCode, message) {
 // Function that handles a GET request.
 const getAllVeterinarians = async (req, res) => {
   try {
+    /* 
+    The below "tags" tells swagger-autogen to group this function
+      #swagger.tags = ['Veterinarians']
+    The below "summary" tells swagger-autogen to add a summary to this function
+      #swagger.summary = 'Gets information for all Veterinarians.'
+    */
     // add the database
     const result = await mongodb.getDb().db().collection('veterinarians').find().toArray();
     res.setHeader('Content-Type', 'application/json');
@@ -24,6 +30,10 @@ const getAllVeterinarians = async (req, res) => {
 // Gets a single pet
 const getSingleVeterinarian = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Veterinarians']
+      #swagger.summary = 'Gets information for a Veterinarian.'
+    */
     // add the database
     const veterinarianId = new ObjectId(req.params.id);
     const result = await mongodb
@@ -43,6 +53,10 @@ const getSingleVeterinarian = async (req, res) => {
 // Create a POST const
 const createVeterinarian = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Veterinarians']
+      #swagger.summary = 'Creates a Veterinarian file.'
+    */
     // Check if user is authenticated (To be used with OAuth)
     // if (!req.oidc.isAuthenticated()) {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule a Veterinarian.');
@@ -72,6 +86,10 @@ const createVeterinarian = async (req, res) => {
 // Function that handles a PUT request to update a pet.
 const updateVeterinarian = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Veterinarians']
+      #swagger.summary = 'Updates a Veterinarian file.'
+    */
     // Check if user is authenticated
     // if (!req.oidc.isAuthenticated()) {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule a veterinarian.');
@@ -99,6 +117,10 @@ const updateVeterinarian = async (req, res) => {
 // Function that handles a DELETE request.
 const deleteVeterinarian = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Veterinarians']
+      #swagger.summary = 'Delete a Veterinarian file.'
+    */
     // Check if user is authenticated
     // if (!req.oidc.isAuthenticated()) {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to delete a Veterinarian.');
