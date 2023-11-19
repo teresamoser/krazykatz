@@ -8,16 +8,20 @@ const doc = {
   host: 'krazykatz.onrender.com',
   tags: [
     {
-      name: 'Appointments'
+      name: 'Appointments',
+      description: 'Keeps track of vet appointments for pets.'
     },
     {
-      name: 'Pets'
+      name: 'Pets',
+      description: 'Keeps track of pet information.'
     },
     {
-      name: 'Users'
+      name: 'Users',
+      description: 'Keeps track of pet owners.'
     },
     {
-      name: 'Veterinarians'
+      name: 'Veterinarians',
+      description: 'Keeps track of Veterinarians '
     }
   ]
 };
