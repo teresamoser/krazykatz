@@ -16,6 +16,12 @@ function errorResponse(res, statusCode, message) {
 // Function that handles a GET request.
 const getAllAppointments = async (req, res) => {
   try {
+    /* 
+    The below "tags" tells swagger-autogen to group this function
+      #swagger.tags = ['Appointments']
+    The below "summary" tells swagger-autogen to add a summary to this function
+      #swagger.summary = 'Gets information for all appointments.'
+    */
     // add the database
     const result = await mongodb.getDb().db().collection('appointments').find().toArray();
     res.setHeader('Content-Type', 'application/json');
@@ -29,6 +35,10 @@ const getAllAppointments = async (req, res) => {
 // Gets a single appointment
 const getSingleAppointment = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Appointments']
+      #swagger.summary = 'Gets information for a single appointment.'
+    */
     // add the database
     const appointmentId = new ObjectId(req.params.id);
     const result = await mongodb
@@ -48,6 +58,10 @@ const getSingleAppointment = async (req, res) => {
 // Create a POST const
 const createAppointment = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Appointments']
+      #swagger.summary = 'Creates an appointment.'
+    */
     // Check if user is authenticated (To be used with OAuth)
     // if (!req.oidc.isAuthenticated()) {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule an appointment.');
@@ -77,6 +91,10 @@ const createAppointment = async (req, res) => {
 // Function that handles a PUT request to update a appointment.
 const updateAppointment = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Appointments']
+      #swagger.summary = 'Updates an appointment.'
+    */
     // Check if user is authenticated
     // if (!req.oidc.isAuthenticated()) {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule a appointment.');
@@ -104,6 +122,10 @@ const updateAppointment = async (req, res) => {
 // Function that handles a DELETE request.
 const deleteAppointment = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Appointments']
+      #swagger.summary = 'Delets an appointment.'
+    */
     // Check if user is authenticated
     // if (!req.oidc.isAuthenticated()) {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to delete an appointment.');
