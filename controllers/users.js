@@ -11,6 +11,12 @@ function errorResponse(res, statusCode, message) {
 // Function that handles a GET request.
 const getAllUsers = async (req, res) => {
   try {
+    /* 
+    The below "tags" tells swagger-autogen to group this function
+      #swagger.tags = ['Users']
+    The below "summary" tells swagger-autogen to add a summary to this function
+      #swagger.summary = 'Gets all users.'
+    */
     // add the database
     const result = await mongodb.getDb().db().collection('users').find().toArray();
     res.setHeader('Content-Type', 'application/json');
@@ -24,6 +30,10 @@ const getAllUsers = async (req, res) => {
 // Gets a single pet
 const getSingleUser = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Users']
+      #swagger.summary = 'Gets informaiton for one user.'
+    */
     // add the database
     const userId = new ObjectId(req.params.id);
     const result = await mongodb.getDb().db().collection('users').find({ _id: userId }).toArray();
@@ -38,6 +48,10 @@ const getSingleUser = async (req, res) => {
 // Create a POST const
 const createUser = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Users']
+      #swagger.summary = 'Creates a user.'
+    */
     // Check if user is authenticated (To be used with OAuth)
     // if (!req.oidc.isAuthenticated()) {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to create a User.');
@@ -61,6 +75,10 @@ const createUser = async (req, res) => {
 // Function that handles a PUT request to update a pet.
 const updateUser = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Users']
+      #swagger.summary = 'Updates a user.'
+    */
     // Check if user is authenticated
     // if (!req.oidc.isAuthenticated()) {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to update user.');
@@ -88,6 +106,10 @@ const updateUser = async (req, res) => {
 // Function that handles a DELETE request.
 const deleteUser = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Users']
+      #swagger.summary = 'Deletes a user.'
+    */
     // Check if user is authenticated
     // if (!req.oidc.isAuthenticated()) {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to delete a User.');
