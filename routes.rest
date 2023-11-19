@@ -54,7 +54,9 @@ DELETE  http://localhost:8080/pets/6558210481cce9f258efc36d
 ###RENDER GET ALL PETS
 GET https://krazykatz.onrender.com/pets
 
-##Veterinarians
+
+
+##VETERINARIANS
 
 ### Get All Veterinarians
 GET http://localhost:8080/veterinarians
