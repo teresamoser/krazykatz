@@ -5,7 +5,7 @@
     "description": "Lesson 9-13 Team Project - Krazy Katz API",
     "version": "1.0.0"
   },
-  "host": "krazykatz.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
   "tags": [
     {
@@ -26,7 +26,7 @@
     }
   ],
   "schemes": [
-    "https"
+    "https", "http"
   ],
   "paths": {
     "/appointments/": {
@@ -51,9 +51,38 @@
         ],
         "summary": "Creates an appointment.",
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                    "user": {
+                      "example": "any"
+                    },
+                    "veterinarian": {
+                      "example": "any"
+                    },
+                    "dateAndTime": {
+                      "example": "any"
+                    },
+                    "purpose": {
+                      "example": "any"
+                    }
+                  }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -145,6 +174,38 @@
         ],
         "summary": "Creates a file for one pet.",
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                    "owner": {
+                      "example": "any"
+                    },
+                    "name": {
+                      "example": "any"
+                    },
+                    "species": {
+                      "example": "any"
+                    },
+                    "breed": {
+                      "example": "any"
+                    },
+                    "age": {
+                      "example": "any"
+                    },
+                    "weight": {
+                      "example": "any"
+                    },
+                    "medicalHistory": {
+                      "example": "any"
+                    }
+                  }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -239,6 +300,29 @@
         ],
         "summary": "Creates a user.",
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                    "username": {
+                      "example": "any"
+                    },
+                    "password": {
+                      "example": "any"
+                    },
+                    "email": {
+                      "example": "any"
+                    },
+                    "contactInformation": {
+                      "example": "any"
+                    }
+                  }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -333,6 +417,29 @@
         ],
         "summary": "Creates a Veterinarian file.",
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                    "name": {
+                      "example": "any"
+                    },
+                    "specialization": {
+                      "example": "any"
+                    },
+                    "contactInformation": {
+                      "example": "any"
+                    },
+                    "availability": {
+                      "example": "any"
+                    }
+                  }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"

@@ -62,12 +62,18 @@ const createVeterinarian = async (req, res) => {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule a Veterinarian.');
     // }
     // add the database
-    const veterinarian = req.body;
+    const veterinarian = {
+      name: req.body.name,
+      specialization: req.body.specialization,
+      contactInformation: req.body.contactInformation,
+      availability: req.body.availability
+    };
+    // const veterinarian = req.body;
     const response = await mongodb
       .getDb()
       .db()
-      .collection('Veterinarians')
-      .insertOne({ veterinarian });
+      .collection('veterinarians')
+      .insertOne( veterinarian );
 
     if (response.acknowledged) {
       const newVeterinarianId = response.insertedId;
