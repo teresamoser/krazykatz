@@ -1,6 +1,7 @@
 body {
   background-image: image-set('./img/pexels-александар-цветановић-1440403.jpg');
-}
-input {
-  background-color: yellow;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* testing CSS - Background should be the img not the color */
+  background-color: yellow; 
 }
