@@ -69,11 +69,7 @@ const createVeterinarian = async (req, res) => {
       availability: req.body.availability
     };
     // const veterinarian = req.body;
-    const response = await mongodb
-      .getDb()
-      .db()
-      .collection('veterinarians')
-      .insertOne( veterinarian );
+    const response = await mongodb.getDb().db().collection('veterinarians').insertOne(veterinarian);
 
     if (response.acknowledged) {
       const newVeterinarianId = response.insertedId;

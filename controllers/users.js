@@ -62,10 +62,9 @@ const createUser = async (req, res) => {
       username: req.body.username,
       password: req.body.password,
       email: req.body.email,
-      contactInformation: req.body.contactInformation,
-      
+      contactInformation: req.body.contactInformation
     };
-    const response = await mongodb.getDb().db().collection('users').insertOne( user );
+    const response = await mongodb.getDb().db().collection('users').insertOne(user);
 
     if (response.acknowledged) {
       const newUserId = response.insertedId;

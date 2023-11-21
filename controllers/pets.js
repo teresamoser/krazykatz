@@ -65,9 +65,8 @@ const createPet = async (req, res) => {
       age: req.body.age,
       weight: req.body.weight,
       medicalHistory: req.body.medicalHistory
-      
     };
-    const response = await mongodb.getDb().db().collection('pets').insertOne( pet );
+    const response = await mongodb.getDb().db().collection('pets').insertOne(pet);
 
     if (response.acknowledged) {
       const newpetId = response.insertedId;

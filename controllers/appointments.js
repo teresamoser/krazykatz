@@ -74,11 +74,7 @@ const createAppointment = async (req, res) => {
       dateAndTime: req.body.dateAndTime,
       purpose: req.body.purpose
     };
-    const response = await mongodb
-      .getDb()
-      .db()
-      .collection('appointments')
-      .insertOne(appointment);
+    const response = await mongodb.getDb().db().collection('appointments').insertOne(appointment);
 
     if (response.acknowledged) {
       const newAppointmentId = response.insertedId;
