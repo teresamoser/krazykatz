@@ -1,5 +1,8 @@
-### LOCAL Get api-docs
+############## LOCALHOST ###############
+### LOCAL Get api-docs 
 GET http://localhost:8080/api-docs
+
+####### APPOINTMENTS
 
 ### Get All Appointments
 GET http://localhost:8080/appointments
@@ -15,19 +18,29 @@ content-type: application/json
   "purpose":"vaccination shots"
 }
 
+### Update Appointment based on ID - MUST UPDATE ID!!!
+PUT http://localhost:8080/appointments/65563b82b1818abe9c24f85f HTTP/1.1
+content-type: application/json
+
+{
+  "user":"jrock",
+  "veterinarian":"Dr. Susan Smith", 
+  "dateAndTime":"June 20 10:00am", 
+  "purpose":"vaccination shots"
+}
+
 ### Delete Appointment - MUST UPDATE ID!!!
 DELETE http://localhost:8080/appointments/65563b82b1818abe9c24f85f
 
 
-###PETS
+######## PETS
 
-###GET ALL PETS
+### Get all Pets
 GET http://localhost:8080/pets
 
-###GET PET WITH ID
-GET http://localhost:8080/pets/6558210481cce9f258efc36d
-
-###POST A PET
+### Get Pet with ID
+GET http://localhost:8080/pets/6555b8b7cc3f5ce4361d1015
+### Post a Pet
 POST http://localhost:8080/pets HTTP/1.1
 content-type: application/json
 
@@ -48,8 +61,250 @@ content-type: application/json
         ]
 }
 
-### DELETE PET WITH ID
-DELETE  http://localhost:8080/pets/6558210481cce9f258efc36d
+### Update Pet based on ID - MUST UPDATE ID!!!
+PUT http://localhost:8080/pets/6555b8b7cc3f5ce4361d1015 HTTP/1.1
+content-type: application/json
 
-###RENDER GET ALL PETS
+{
+ "owner":"Dwayne Douglas Johnson",
+        "name":"Chleo", 
+        "species":"Feline", 
+        "breed":"Tabby",
+        "age":"1 year", 
+        "weight":"3 lbs",
+        "medicalHistory":
+        [
+            {
+                "vaccineType":"Feline Leukemia Virus",
+                "date":"3/8/2023",
+                "secondDose":"3/15/2025"
+            }
+        ]
+}
+
+### Delete a Pet with ID
+DELETE  http://localhost:8080/pets/6555b8b7cc3f5ce4361d1015
+
+
+######## USERS
+
+### Get all Users
+GET http://localhost:8080/users
+
+### Get User with ID
+GET http://localhost:8080/users/6555b906cc3f5ce4361da9b7
+
+### Post a User
+POST http://localhost:8080/users HTTP/1.1
+content-type: application/json
+
+ {
+    "username": "jrock",
+    "password": "k!tTy8",
+    "email": "maori@gmail.com",
+    "contactInformation": "Phone: 803-333-2739"
+  }
+
+### Update User based on ID - MUST UPDATE ID!!!
+PUT http://localhost:8080/users/6555b906cc3f5ce4361da9b7 HTTP/1.1
+content-type: application/json
+
+ {
+    "username": "therockrocks",
+    "password": "k!tTy8",
+    "email": "maori@gmail.com",
+    "contactInformation": "Phone: 803-333-2739"
+  }
+
+### Delete a User with ID
+DELETE  http://localhost:8080/users/6555b906cc3f5ce4361da9b7
+
+
+######## VETERINARIANS
+
+### Get all Veterinarians
+GET http://localhost:8080/veterinarians
+
+### Get Veterinarian with ID
+GET http://localhost:8080/veterinarians/6555bd58cc3f5ce43626b3db
+
+### Post a Veterinarian
+POST http://localhost:8080/veterinarians HTTP/1.1
+content-type: application/json
+
+  {
+    "name": "Dr. Kelly Parnell",
+    "specialization": "Soft Tissue Surgery",
+    "contactInformation": "Phone: 208-398-5938",
+    "availability": "Mon-Fri: 8:00am-5:30pm"
+  }
+
+### Update Veterinarian based on ID - MUST UPDATE ID!!!
+PUT http://localhost:8080/veterinarians/6555bd58cc3f5ce43626b3db HTTP/1.1
+content-type: application/json
+
+  {
+    "name": "Dr. Susan Smith",
+    "specialization": "Soft Tissue Surgery",
+    "contactInformation": "Phone: 208-398-5938",
+    "availability": "Mon-Fri: 8:00am-5:30pm"
+  }
+
+### Delete a Veterinarian with ID
+DELETE  http://localhost:8080/veterinarians/6555bd58cc3f5ce43626b3db
+
+############## RENDER ###############
+
+### RENDER Get api-docs 
+GET https://krazykatz.onrender.com/api-docs
+
+####### APPOINTMENTS
+
+### Get All Appointments
+GET https://krazykatz.onrender.com/appointments
+
+### Create new Appointment
+POST https://krazykatz.onrender.com/appointments HTTP/1.1
+content-type: application/json
+
+{
+  "user":"jrock",
+  "veterinarian":"Dr. Kelly Parnell", 
+  "dateAndTime":"June 20 10:00am", 
+  "purpose":"vaccination shots"
+}
+
+### Update Appointment based on ID - MUST UPDATE ID!!!
+PUT https://krazykatz.onrender.com/65563b82b1818abe9c24f85fHTTP/1.1
+content-type: application/json
+
+{
+  "user":"jrock",
+  "veterinarian":"Dr. Susan Smith", 
+  "dateAndTime":"June 20 10:00am", 
+  "purpose":"vaccination shots"
+}
+
+### Delete Appointment - MUST UPDATE ID!!!
+DELETE https://krazykatz.onrender.com/appointments/65563b82b1818abe9c24f85f
+
+
+######## PETS
+
+### Get all Pets
 GET https://krazykatz.onrender.com/pets
+
+### Get Pet with ID
+GET https://krazykatz.onrender.com/pets/6555b8b7cc3f5ce4361d1015
+### Post a Pet
+POST https://krazykatz.onrender.com/pets HTTP/1.1
+content-type: application/json
+
+{
+ "owner":"The Rock Johnson",
+        "name":"Chleo", 
+        "species":"Feline", 
+        "breed":"Tabby",
+        "age":"1 year", 
+        "weight":"3 lbs",
+        "medicalHistory":
+        [
+            {
+                "vaccineType":"Feline Leukemia Virus",
+                "date":"3/8/2023",
+                "secondDose":"3/15/2025"
+            }
+        ]
+}
+
+### Update Pet based on ID - MUST UPDATE ID!!!
+PUT https://krazykatz.onrender.com/pets/6555b8b7cc3f5ce4361d1015 HTTP/1.1
+content-type: application/json
+
+{
+ "owner":"Dwayne Douglas Johnson",
+        "name":"Chleo", 
+        "species":"Feline", 
+        "breed":"Tabby",
+        "age":"1 year", 
+        "weight":"3 lbs",
+        "medicalHistory":
+        [
+            {
+                "vaccineType":"Feline Leukemia Virus",
+                "date":"3/8/2023",
+                "secondDose":"3/15/2025"
+            }
+        ]
+}
+
+### Delete a Pet with ID
+DELETE  https://krazykatz.onrender.com/pets/6555b8b7cc3f5ce4361d1015
+
+
+######## USERS
+
+### Get all Users
+GET https://krazykatz.onrender.com/users
+
+### Get User with ID
+GET https://krazykatz.onrender.com/users/6555b906cc3f5ce4361da9b7
+
+### Post a User
+POST https://krazykatz.onrender.com/users HTTP/1.1
+content-type: application/json
+
+ {
+    "username": "jrock",
+    "password": "k!tTy8",
+    "email": "maori@gmail.com",
+    "contactInformation": "Phone: 803-333-2739"
+  }
+
+### Update User based on ID - MUST UPDATE ID!!!
+PUT https://krazykatz.onrender.com/users/6555b906cc3f5ce4361da9b7 HTTP/1.1
+content-type: application/json
+
+ {
+    "username": "therockrocks",
+    "password": "k!tTy8",
+    "email": "maori@gmail.com",
+    "contactInformation": "Phone: 803-333-2739"
+  }
+
+### Delete a User with ID
+DELETE  https://krazykatz.onrender.com/users/6555b906cc3f5ce4361da9b7
+
+
+######## VETERINARIANS
+
+### Get all Veterinarians
+GET https://krazykatz.onrender.com/veterinarians
+
+### Get Veterinarian with ID
+GET https://krazykatz.onrender.com/veterinarians/6555bd58cc3f5ce43626b3db
+
+### Post a Veterinarian
+POST https://krazykatz.onrender.com/veterinarians HTTP/1.1
+content-type: application/json
+
+  {
+    "name": "Dr. Kelly Parnell",
+    "specialization": "Soft Tissue Surgery",
+    "contactInformation": "Phone: 208-398-5938",
+    "availability": "Mon-Fri: 8:00am-5:30pm"
+  }
+
+### Update Veterinarian based on ID - MUST UPDATE ID!!!
+PUT https://krazykatz.onrender.com/veterinarians/6555bd58cc3f5ce43626b3db HTTP/1.1
+content-type: application/json
+
+  {
+    "name": "Dr. Susan Smith",
+    "specialization": "Soft Tissue Surgery",
+    "contactInformation": "Phone: 208-398-5938",
+    "availability": "Mon-Fri: 8:00am-5:30pm"
+  }
+
+### Delete a Veterinarian with ID
+DELETE  https://krazykatz.onrender.com/veterinarians/6555bd58cc3f5ce43626b3db
