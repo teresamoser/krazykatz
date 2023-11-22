@@ -129,6 +129,17 @@ GET http://localhost:8080/veterinarians
 GET http://localhost:8080/veterinarians/6555bd58cc3f5ce43626b3db
 
 ### Post a Veterinarian
+=======
+###RENDER GET ALL PETS
+GET https://krazykatz.onrender.com/pets
+
+
+##VETERINARIANS
+
+### Get All Veterinarians
+GET http://localhost:8080/veterinarians
+
+### Create new Veterinarians
 POST http://localhost:8080/veterinarians HTTP/1.1
 content-type: application/json
 
@@ -308,3 +319,7 @@ content-type: application/json
 
 ### Delete a Veterinarian with ID
 DELETE  https://krazykatz.onrender.com/veterinarians/6555bd58cc3f5ce43626b3db
+
+
+
+

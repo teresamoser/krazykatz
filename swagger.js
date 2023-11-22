@@ -6,7 +6,25 @@ const doc = {
     description: 'Lesson 9-13 Team Project - Krazy Katz API'
   },
   host: 'krazykatz.onrender.com',
-  schemes: ['https']
+  schemes: ['https'],
+  tags: [
+    {
+      name: 'Appointments',
+      description: 'Keeps track of vet appointments for pets.'
+    },
+    {
+      name: 'Pets',
+      description: 'Keeps track of pet information.'
+    },
+    {
+      name: 'Users',
+      description: 'Keeps track of pet owners.'
+    },
+    {
+      name: 'Veterinarians',
+      description: 'Keeps track of Veterinarians '
+    }
+  ]
 };
 
 const outputFile = './swagger.json';

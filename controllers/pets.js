@@ -10,6 +10,12 @@ function errorResponse(res, statusCode, message) {
 // Function that handles a GET request.
 const getAllPets = async (req, res) => {
   try {
+    /* 
+    The below "tags" tells swagger-autogen to group this function
+      #swagger.tags = ['Pets']
+    The below "summary" tells swagger-autogen to add a summary to this function
+      #swagger.summary = 'Gets all pets.'
+    */
     // add the database
     const result = await mongodb.getDb().db().collection('pets').find().toArray();
     res.setHeader('Content-Type', 'application/json');
@@ -23,6 +29,10 @@ const getAllPets = async (req, res) => {
 // Gets a single pet
 const getSinglePet = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Pets']
+      #swagger.summary = 'Gets information for one pet.'
+    */
     // add the database
     const petId = new ObjectId(req.params.id);
     const result = await mongodb.getDb().db().collection('pets').find({ _id: petId }).toArray();
@@ -37,13 +47,26 @@ const getSinglePet = async (req, res) => {
 // Create a POST const
 const createPet = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Pets']
+      #swagger.summary = 'Creates a file for one pet.'
+    */
     // Check if user is authenticated (To be used with OAuth)
     // if (!req.oidc.isAuthenticated()) {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule an pet.');
     // }
     // add the database
-    const pet = req.body;
-    const response = await mongodb.getDb().db().collection('pets').insertOne({ pet });
+    // const pet = req.body;
+    const pet = {
+      owner: req.body.owner,
+      name: req.body.name,
+      species: req.body.species,
+      breed: req.body.breed,
+      age: req.body.age,
+      weight: req.body.weight,
+      medicalHistory: req.body.medicalHistory
+    };
+    const response = await mongodb.getDb().db().collection('pets').insertOne(pet);
 
     if (response.acknowledged) {
       const newpetId = response.insertedId;
@@ -60,6 +83,10 @@ const createPet = async (req, res) => {
 // Function that handles a PUT request to update a pet.
 const updatePet = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Pets']
+      #swagger.summary = 'Updates information for one pet.'
+    */
     // Check if user is authenticated
     // if (!req.oidc.isAuthenticated()) {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule a pet.');
@@ -87,6 +114,10 @@ const updatePet = async (req, res) => {
 // Function that handles a DELETE request.
 const deletePet = async (req, res) => {
   try {
+    /* 
+      #swagger.tags = ['Pets']
+      #swagger.summary = 'Deletes information for one pet.'
+    */
     // Check if user is authenticated
     // if (!req.oidc.isAuthenticated()) {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to delete an pet.');
