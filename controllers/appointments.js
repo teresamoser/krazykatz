@@ -67,12 +67,14 @@ const createAppointment = async (req, res) => {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule an appointment.');
     // }
     // add the database
-    const appointment = req.body;
-    const response = await mongodb
-      .getDb()
-      .db()
-      .collection('appointments')
-      .insertOne({ appointment });
+    // const appointment = req.body;
+    const appointment = {
+      user: req.body.user,
+      veterinarian: req.body.veterinarian,
+      dateAndTime: req.body.dateAndTime,
+      purpose: req.body.purpose
+    };
+    const response = await mongodb.getDb().db().collection('appointments').insertOne(appointment);
 
     if (response.acknowledged) {
       const newAppointmentId = response.insertedId;

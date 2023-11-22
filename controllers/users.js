@@ -57,8 +57,14 @@ const createUser = async (req, res) => {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to create a User.');
     // }
     // add the database
-    const user = req.body;
-    const response = await mongodb.getDb().db().collection('users').insertOne({ user });
+    // const user = req.body;
+    const user = {
+      username: req.body.username,
+      password: req.body.password,
+      email: req.body.email,
+      contactInformation: req.body.contactInformation
+    };
+    const response = await mongodb.getDb().db().collection('users').insertOne(user);
 
     if (response.acknowledged) {
       const newUserId = response.insertedId;

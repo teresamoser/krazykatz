@@ -56,8 +56,17 @@ const createPet = async (req, res) => {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule an pet.');
     // }
     // add the database
-    const pet = req.body;
-    const response = await mongodb.getDb().db().collection('pets').insertOne({ pet });
+    // const pet = req.body;
+    const pet = {
+      owner: req.body.owner,
+      name: req.body.name,
+      species: req.body.species,
+      breed: req.body.breed,
+      age: req.body.age,
+      weight: req.body.weight,
+      medicalHistory: req.body.medicalHistory
+    };
+    const response = await mongodb.getDb().db().collection('pets').insertOne(pet);
 
     if (response.acknowledged) {
       const newpetId = response.insertedId;
