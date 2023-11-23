@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body {
   background-image: url('./img/pexels-александар-цветановић-1440403.jpg');
   background-repeat: no-repeat;
@@ -11,12 +15,14 @@ h1 {
   text-align: center;
   padding-top: 50px;
   font-size: 3em;
+  text-shadow: 2.5px 2.5px 10px #fff0c7;
 }
 
 h2 {
   text-align: center;
   margin-top: 30px;
   font-size: 2em;
+  text-shadow: 2.5px 2.5px 10px #fff0c7;
 }
 
 div {
@@ -36,6 +42,7 @@ input[type="button"] {
   margin: 10px;
   cursor: pointer;
   border-radius: 5px;
+  box-shadow: 2.5px 2.5px 10px #061123;
 }
 
 input[type="button"]:hover {

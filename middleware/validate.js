@@ -1,6 +1,5 @@
 const validator = require('../helpers/validate');
 const ObjectId = require('mongodb').ObjectId;
-// const { requiresAuth } = require('express-openid-connect');
 
 const checkId = (req, res, next) => {
   // checks to see if the id entered is a valid Mongodb ID
