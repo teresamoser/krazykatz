@@ -3,7 +3,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Arial', sans-serif;
-  color: #fff;
+  color: #0d1f3f;
   margin: 0;
 }
 
@@ -25,7 +25,7 @@ div {
 }
 
 input[type="button"] {
-  background-color: #4CAF50;
+  background-color: #163872;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -39,7 +39,7 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-  background-color: #45a049;
+  background-color: #0d1f3f;
 }
 
 input[type="button"]:focus {
