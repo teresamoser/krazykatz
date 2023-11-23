@@ -2,8 +2,12 @@ const express = require('express');
 const app = express();
 const mongodb = require('./db/connect');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const port = process.env.PORT || 8080;
+
+// Serve static files from the "frontend" directory
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 app
   .use(bodyParser.json())
