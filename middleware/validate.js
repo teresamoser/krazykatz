@@ -13,7 +13,9 @@ const checkId = (req, res, next) => {
 
 const saveAppointment = (req, res, next) => {
   const validationRule = {
-    dateTime: 'required|string',
+    user: 'required|string',
+    veterinarian: 'required|string',
+    dateAndTime: 'required|string',
     purpose: 'required|string|max:500'
   };
   validator(req.body, validationRule, {}, (err, status) => {

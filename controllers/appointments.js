@@ -114,7 +114,7 @@ const updateAppointment = async (req, res) => {
       .getDb()
       .db()
       .collection('appointments')
-      .updateOne({ _id: appointmentId }, appointment);
+      .replaceOne({ _id: appointmentId }, appointment);
 
     if (response.matchedCount === 1 && response.modifiedCount === 1) {
       res.status(204).json({ message: 'Appointment updated successfully' });
