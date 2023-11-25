@@ -97,13 +97,19 @@ const updateVeterinarian = async (req, res) => {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule a veterinarian.');
     // }
     const veterinarianId = new ObjectId(req.params.id);
-    const updatedVeterinarian = req.body;
+    // const updatedVeterinarian = req.body;
+    const veterinarian = {
+      name: req.body.name,
+      specialization: req.body.specialization,
+      contactInformation: req.body.contactInformation,
+      availability: req.body.availability
+    };
     // add the database
     const response = await mongodb
       .getDb()
       .db()
       .collection('veterinarians')
-      .updateOne({ _id: veterinarianId }, { $set: { pet: updatedVeterinarian } });
+      .replaceOne({ _id: veterinarianId }, veterinarian);
 
     if (response.matchedCount === 1 && response.modifiedCount === 1) {
       res.status(204).json({ message: 'Veterinarian updated successfully' });

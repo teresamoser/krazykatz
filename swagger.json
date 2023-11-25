@@ -109,6 +109,27 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "example": "any"
+                },
+                "veterinarian": {
+                  "example": "any"
+                },
+                "dateAndTime": {
+                  "example": "any"
+                },
+                "purpose": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -221,6 +242,36 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "owner": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "species": {
+                  "example": "any"
+                },
+                "breed": {
+                  "example": "any"
+                },
+                "age": {
+                  "example": "any"
+                },
+                "weight": {
+                  "example": "any"
+                },
+                "medicalHistory": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -324,6 +375,27 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "contactInformation": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -427,6 +499,27 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "specialization": {
+                  "example": "any"
+                },
+                "contactInformation": {
+                  "example": "any"
+                },
+                "availability": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
