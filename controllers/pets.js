@@ -92,13 +92,18 @@ const updatePet = async (req, res) => {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule a pet.');
     // }
     const petId = new ObjectId(req.params.id);
-    const updatedpet = req.body;
+    // const updatedpet = req.body;
+    const pet = {
+      owner: req.body.owner,
+      name: req.body.name,
+      species: req.body.species,
+      breed: req.body.breed,
+      age: req.body.age,
+      weight: req.body.weight,
+      medicalHistory: req.body.medicalHistory
+    };
     // add the database
-    const response = await mongodb
-      .getDb()
-      .db()
-      .collection('pets')
-      .updateOne({ _id: petId }, { $set: { pet: updatedpet } });
+    const response = await mongodb.getDb().db().collection('pets').replaceOne({ _id: petId }, pet);
 
     if (response.matchedCount === 1 && response.modifiedCount === 1) {
       res.status(204).json({ message: 'Pet updated successfully' });

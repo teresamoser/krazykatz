@@ -90,13 +90,19 @@ const updateUser = async (req, res) => {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to update user.');
     // }
     const userId = new ObjectId(req.params.id);
-    const updatedUser = req.body;
+    // const updatedUser = req.body;
+    const user = {
+      username: req.body.username,
+      password: req.body.password,
+      email: req.body.email,
+      contactInformation: req.body.contactInformation
+    };
     // add the database
     const response = await mongodb
       .getDb()
       .db()
       .collection('users')
-      .updateOne({ _id: userId }, { $set: { pet: updatedUser } });
+      .replaceOne({ _id: userId }, user);
 
     if (response.matchedCount === 1 && response.modifiedCount === 1) {
       res.status(204).json({ message: 'User updated successfully' });
