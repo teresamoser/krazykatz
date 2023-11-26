@@ -102,13 +102,19 @@ const updateAppointment = async (req, res) => {
     //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule a appointment.');
     // }
     const appointmentId = new ObjectId(req.params.id);
-    const updatedAppointment = req.body;
+    // const updatedAppointment = req.body;
+    const appointment = {
+      user: req.body.user,
+      veterinarian: req.body.veterinarian,
+      dateAndTime: req.body.dateAndTime,
+      purpose: req.body.purpose
+    };
     // add the database
     const response = await mongodb
       .getDb()
       .db()
       .collection('appointments')
-      .updateOne({ _id: appointmentId }, { $set: { appointment: updatedAppointment } });
+      .replaceOne({ _id: appointmentId }, appointment);
 
     if (response.matchedCount === 1 && response.modifiedCount === 1) {
       res.status(204).json({ message: 'Appointment updated successfully' });

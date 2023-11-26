@@ -1,6 +1,5 @@
 const validator = require('../helpers/validate');
 const ObjectId = require('mongodb').ObjectId;
-// const { requiresAuth } = require('express-openid-connect');
 
 const checkId = (req, res, next) => {
   // checks to see if the id entered is a valid Mongodb ID
@@ -14,7 +13,9 @@ const checkId = (req, res, next) => {
 
 const saveAppointment = (req, res, next) => {
   const validationRule = {
-    dateTime: 'required|string',
+    user: 'required|string',
+    veterinarian: 'required|string',
+    dateAndTime: 'required|string',
     purpose: 'required|string|max:500'
   };
   validator(req.body, validationRule, {}, (err, status) => {

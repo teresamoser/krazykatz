@@ -1,7 +1,54 @@
+html {
+  height: 100%;
+}
+
 body {
-  background-image: image-set('./img/pexels-александар-цветановић-1440403.jpg');
+  background-image: url('./img/pexels-александар-цветановић-1440403.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  /* testing CSS - Background should be the img not the color */
-  background-color: yellow;
+  font-family: 'Arial', sans-serif;
+  color: #0d1f3f;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 3em;
+  text-shadow: 2.5px 2.5px 10px #fff0c7;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 2em;
+  text-shadow: 2.5px 2.5px 10px #fff0c7;
+}
+
+div {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input[type='button'] {
+  background-color: #163872;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 2.5px 2.5px 10px #061123;
+}
+
+input[type='button']:hover {
+  background-color: #0d1f3f;
+}
+
+input[type='button']:focus {
+  outline: none;
 }
