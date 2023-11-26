@@ -138,7 +138,7 @@ const deleteVeterinarian = async (req, res) => {
     const response = await mongodb
       .getDb()
       .db()
-      .collection('veterinarian')
+      .collection('veterinarians')
       .deleteOne({ _id: veterinarianId });
 
     if (response.deletedCount === 1) {
