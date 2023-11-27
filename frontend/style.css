@@ -7,7 +7,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Arial', sans-serif;
-  color: #0d1f3f;
+  color: #163872;
   margin: 0;
 }
 
@@ -33,7 +33,7 @@ div {
 input[type='button'] {
   background-color: #163872;
   border: none;
-  color: white;
+  color: #fff0c7;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -51,4 +51,8 @@ input[type='button']:hover {
 
 input[type='button']:focus {
   outline: none;
+}
+
+footer {
+  font-size: 10px;
 }
