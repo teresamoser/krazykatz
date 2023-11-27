@@ -47,16 +47,7 @@ const getSinglePet = async (req, res) => {
 // Create a POST const
 const createPet = async (req, res) => {
   try {
-    /* 
-      #swagger.tags = ['Pets']
-      #swagger.summary = 'Creates a file for one pet.'
-    */
-    // Check if user is authenticated (To be used with OAuth)
-    // if (!req.oidc.isAuthenticated()) {
-    //   return errorResponse(res, 401, 'Unauthorized. Please login to schedule an pet.');
-    // }
-    // add the database
-    // const pet = req.body;
+    
     const pet = {
       owner: req.body.owner,
       name: req.body.name,
@@ -64,8 +55,13 @@ const createPet = async (req, res) => {
       breed: req.body.breed,
       age: req.body.age,
       weight: req.body.weight,
-      medicalHistory: req.body.medicalHistory
+      medicalHistory: req.body.medicalHistory.map(history => ({
+        vaccineType: history.vaccineType,
+        date: history.date,
+        secondDose: history.secondDose
+      }))
     };
+  
     const response = await mongodb.getDb().db().collection('pets').insertOne(pet);
 
     if (response.acknowledged) {
@@ -100,7 +96,11 @@ const updatePet = async (req, res) => {
       breed: req.body.breed,
       age: req.body.age,
       weight: req.body.weight,
-      medicalHistory: req.body.medicalHistory
+      medicalHistory: req.body.medicalHistory.map(history => ({
+        vaccineType: history.vaccineType,
+        date: history.date,
+        secondDose: history.secondDose
+      }))
     };
     // add the database
     const response = await mongodb.getDb().db().collection('pets').replaceOne({ _id: petId }, pet);

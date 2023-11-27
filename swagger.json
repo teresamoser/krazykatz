@@ -199,7 +199,21 @@
                   "example": "any"
                 },
                 "medicalHistory": {
-                  "example": "any"
+                  "type": "array",
+                  "items": {
+                  "type": "object",
+                  "properties": {
+                    "vaccineType": {
+                    "example": "any"
+                  },
+                  "date": {
+                    "example": "any"
+                  },
+                  "secondDose":{
+                    "example": "any"
+                  }
+                }
+            }
                 }
               }
             }
@@ -268,15 +282,38 @@
                   "example": "any"
                 },
                 "medicalHistory": {
-                  "example": "any"
+                  "type": "array",
+                  "items": {
+                  "type": "object",
+                  "properties": {
+                    "vaccineType": {
+                    "example": "any"
+                  },
+                  "date": {
+                    "example": "any"
+                  },
+                  "secondDose":{
+                    "example": "any"
+                  }
                 }
-              }
+            }
+                }
             }
           }
+        }
         ],
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
