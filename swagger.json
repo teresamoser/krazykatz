@@ -54,7 +54,7 @@
                   "example": "any"
                 },
                 "veterinarian": {
-                  "example": "any"
+                  "example": "Dr. any"
                 },
                 "dateAndTime": {
                   "example": "any"
@@ -120,7 +120,7 @@
                   "example": "any"
                 },
                 "veterinarian": {
-                  "example": "any"
+                  "example": "Dr. any"
                 },
                 "dateAndTime": {
                   "example": "any"
@@ -196,7 +196,7 @@
                   "example": "any"
                 },
                 "weight": {
-                  "example": "any"
+                  "example": "any lbs"
                 },
                 "medicalHistory": {
                   "type": "array",
@@ -207,10 +207,10 @@
                     "example": "any"
                   },
                   "date": {
-                    "example": "any"
+                    "example": "M-D-YYYY"
                   },
                   "secondDose":{
-                    "example": "any"
+                    "example": "M-D-YYYY"
                   }
                 }
             }
@@ -279,7 +279,7 @@
                   "example": "any"
                 },
                 "weight": {
-                  "example": "any"
+                  "example": "any lbs"
                 },
                 "medicalHistory": {
                   "type": "array",
@@ -290,10 +290,10 @@
                     "example": "any"
                   },
                   "date": {
-                    "example": "any"
+                    "example": "M-D-YYYY"
                   },
                   "secondDose":{
-                    "example": "any"
+                    "example": "M-D-YYYY"
                   }
                 }
             }
@@ -484,7 +484,7 @@
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "any"
+                  "example": "Dr. any"
                 },
                 "specialization": {
                   "example": "any"
@@ -493,7 +493,7 @@
                   "example": "any"
                 },
                 "availability": {
-                  "example": "any"
+                  "example": "Mon-Fri: 8:00am-5:30pm"
                 }
               }
             }
@@ -544,7 +544,7 @@
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "any"
+                  "example": "Dr. any"
                 },
                 "specialization": {
                   "example": "any"
@@ -553,7 +553,7 @@
                   "example": "any"
                 },
                 "availability": {
-                  "example": "any"
+                  "example": "Mon-Fri: 8:00am-5:30pm"
                 }
               }
             }
