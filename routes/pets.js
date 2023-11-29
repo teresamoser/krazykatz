@@ -10,13 +10,13 @@ router.get('/:id', requiresAuth(), validation.checkId, petsController.getSingleP
 router.post(
   '/',
   requiresAuth(),
-  // validation.savepets,
+  validation.savepets,
   petsController.createPet
 );
 router.put(
   '/:id',
   requiresAuth(),
-  // validation.savepets,
+  validation.savepets,
   petsController.updatePet
 );
 router.delete('/:id', requiresAuth(), petsController.deletePet);

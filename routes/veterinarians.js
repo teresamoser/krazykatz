@@ -16,14 +16,14 @@ router.get(
 router.post(
   '/',
   requiresAuth(),
-  // validation.saveVeterinarians,
+  validation.saveVeterinarians,
   veterinariansController.createVeterinarian
 );
 router.put(
   '/:id',
   requiresAuth(),
   validation.checkId,
-  // validation.saveVeterinarians,
+  validation.saveVeterinarians,
   veterinariansController.updateVeterinarian
 );
 router.delete(

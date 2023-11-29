@@ -54,7 +54,7 @@
                   "example": "any"
                 },
                 "veterinarian": {
-                  "example": "any"
+                  "example": "Dr. any"
                 },
                 "dateAndTime": {
                   "example": "any"
@@ -120,7 +120,7 @@
                   "example": "any"
                 },
                 "veterinarian": {
-                  "example": "any"
+                  "example": "Dr. any"
                 },
                 "dateAndTime": {
                   "example": "any"
@@ -196,10 +196,24 @@
                   "example": "any"
                 },
                 "weight": {
-                  "example": "any"
+                  "example": "any lbs"
                 },
                 "medicalHistory": {
-                  "example": "any"
+                  "type": "array",
+                  "items": {
+                  "type": "object",
+                  "properties": {
+                    "vaccineType": {
+                    "example": "any"
+                  },
+                  "date": {
+                    "example": "M-D-YYYY"
+                  },
+                  "secondDose":{
+                    "example": "M-D-YYYY"
+                  }
+                }
+            }
                 }
               }
             }
@@ -265,18 +279,41 @@
                   "example": "any"
                 },
                 "weight": {
-                  "example": "any"
+                  "example": "any lbs"
                 },
                 "medicalHistory": {
-                  "example": "any"
+                  "type": "array",
+                  "items": {
+                  "type": "object",
+                  "properties": {
+                    "vaccineType": {
+                    "example": "any"
+                  },
+                  "date": {
+                    "example": "M-D-YYYY"
+                  },
+                  "secondDose":{
+                    "example": "M-D-YYYY"
+                  }
                 }
-              }
+            }
+                }
             }
           }
+        }
         ],
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -447,7 +484,7 @@
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "any"
+                  "example": "Dr. any"
                 },
                 "specialization": {
                   "example": "any"
@@ -456,7 +493,7 @@
                   "example": "any"
                 },
                 "availability": {
-                  "example": "any"
+                  "example": "Mon-Fri: 8:00am-5:30pm"
                 }
               }
             }
@@ -507,7 +544,7 @@
               "type": "object",
               "properties": {
                 "name": {
-                  "example": "any"
+                  "example": "Dr. any"
                 },
                 "specialization": {
                   "example": "any"
@@ -516,7 +553,7 @@
                   "example": "any"
                 },
                 "availability": {
-                  "example": "any"
+                  "example": "Mon-Fri: 8:00am-5:30pm"
                 }
               }
             }

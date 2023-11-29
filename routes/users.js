@@ -11,14 +11,14 @@ router.get('/:id', requiresAuth(), validation.checkId, usersController.getSingle
 router.post(
   '/',
   requiresAuth(),
-  // validation.saveusers,
+  validation.saveusers,
   usersController.createUser
 );
 router.put(
   '/:id',
   requiresAuth(),
   validation.checkId,
-  // validation.saveusers,
+  validation.saveusers,
   usersController.updateUser
 );
 router.delete('/:id', requiresAuth(), validation.checkId, usersController.deleteUser);
