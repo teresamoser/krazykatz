@@ -21,8 +21,4 @@ router.use('/users', users);
 router.use('/veterinarians', veterinarians);
 router.use('/', homeController.home);
 
-// DO NOT UNCOMMENT until Auth0 is working -Nina
-// router.use(auth(auth0Controller.config));
-// router.use('/auth0', auth0);
-
 module.exports = router;

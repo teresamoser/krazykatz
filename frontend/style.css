@@ -5,11 +5,12 @@ h1,h2{
   font-family: 'Bebas Neue', sans-serif;
 }
 
-html {
+/* html {
   height: 100%;
-}
+} */
 
 body {
+	background-color: #0d1f3f;
   background-image: url('./img/pexels-александар-цветановић-1440403.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -58,7 +59,7 @@ input[type='button']:hover {
   background-color: #0d1f3f;
   background: #333;
   border: 1px solid #333;
-  color: #fefefe;
+  color: #fff0c7;
   border-radius: 30px;
 }
 
@@ -67,8 +68,8 @@ input[type='button']:focus {
 } 
 
 footer {
-  font-size: 20px;
-  color: black;
+  font-size: x-small;
+  color: #163872;
   text-align: center;
 }
 
@@ -79,7 +80,7 @@ footer {
   position: relative;
   width: 200px; /* Adjust container width */
   height: 200px; /* Adjust container height */
-  margin-left: 800px; /* Adjust margin as needed */
+  margin-left: calc(50% - 100px); /* Adjust margin as needed - Updated to stay center - Nina */
 }
 .cat{
 	position: absolute;
