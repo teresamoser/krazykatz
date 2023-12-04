@@ -4,7 +4,7 @@
   "description": "The team Project for people who love animals -Krazy katz Project API",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "tests": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles",    
     "start": "nodemon server.js",
     "dev_start": "node server.js",
     "lint": "eslint .",
@@ -37,6 +37,7 @@
     "validatorjs": "^3.22.1"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^4.2.0",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard": "^17.1.0",
@@ -45,6 +46,7 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
+    "jest": "^29.7.0",
     "nodemon": "^3.0.1",
     "prettier": "3.1.0",
     "swagger-autogen": "^2.23.6",

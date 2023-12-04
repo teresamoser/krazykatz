@@ -1,2 +1,5 @@
 node_modules
 .env
+# Nina - the below is to ignore items I was working on for Oauth
+coverage
+oauth.js
