@@ -21,6 +21,5 @@ router.use('/appointments', appointments);
 router.use('/pets', pets);
 router.use('/users', users);
 router.use('/veterinarians', veterinarians);
-// router.use('/', homeController.home);
 
 module.exports = router;
