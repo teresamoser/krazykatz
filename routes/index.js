@@ -11,9 +11,11 @@ const pets = require('./pets');
 const users = require('./users');
 const veterinarians = require('./veterinarians');
 const auth0 = require('./auth0');
+// const oauth = require('./oauth');
 
 router.use(auth(auth0Controller.config));
 router.use('/auth0', auth0);
+// router.use('/oauth', oauth);
 router.use('/api-docs', swagger);
 router.use('/appointments', appointments);
 router.use('/pets', pets);
