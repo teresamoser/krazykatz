@@ -3,14 +3,12 @@ const { MongoClient } = require('mongodb');
 
 const port = process.env.PORT || 8080;
 
-describe('Test Server Connection', () => {
+describe('Test Server Connection by inserting and deleting in users collection', () => {
   let connection;
   let db;
 
   beforeAll(async () => {
-    connection = await MongoClient.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true
-    });
+    connection = await MongoClient.connect(process.env.MONGODB_URI);
     db = await connection.db('KrazyKatz');
   });
 
