@@ -43,28 +43,28 @@ const savepets = (req, res, next) => {
   const medicalHistoryRules = {
     'medicalHistory.*.vaccineType': 'required|string',
     'medicalHistory.*.date': 'required|date',
-    'medicalHistory.*.secondDose': 'required|date',
+    'medicalHistory.*.secondDose': 'required|date'
   };
   // Combinando as regras
-const allRules = { ...validationRule, ...medicalHistoryRules };
-validator(req.body, allRules, {}, (err, status) => {
-  if (!status) {
-    const errors = err.errors || {};  // Aqui ajustamos para lidar com o objeto de erros
-    res.status(400).send({
-      success: false,
-      message: 'Validation failed',
-      data: errors,
-    });
-  } else {
-    next();
-  }
-});
+  const allRules = { ...validationRule, ...medicalHistoryRules };
+  validator(req.body, allRules, {}, (err, status) => {
+    if (!status) {
+      const errors = err.errors || {}; // Aqui ajustamos para lidar com o objeto de erros
+      res.status(400).send({
+        success: false,
+        message: 'Validation failed',
+        data: errors
+      });
+    } else {
+      next();
+    }
+  });
 };
 
 const saveusers = (req, res, next) => {
   const validationRule = {
     username: 'required|string',
-    password: 'required|string|min:8|max:26|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/',
+    password: 'required|string|min:8|max:26|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*d).+$/',
     email: 'required|email',
     contactInformation: 'required|string'
   };

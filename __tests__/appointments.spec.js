@@ -5,16 +5,20 @@ const mongodb = require('../db/connect');
 
 describe('getAllAppointments', () => {
   it('should return all appointments', async () => {
-    const mockAppointments = [{ /* mocked appointment data */ }];
+    const mockAppointments = [
+      {
+        /* mocked appointment data */
+      }
+    ];
     jest.spyOn(mongodb.getDb().db().collection('appointments'), 'find').mockReturnValue({
-      toArray: jest.fn().mockResolvedValue(mockAppointments),
+      toArray: jest.fn().mockResolvedValue(mockAppointments)
     });
 
     const req = {};
     const res = {
       setHeader: jest.fn(),
       status: jest.fn(),
-      json: jest.fn(),
+      json: jest.fn()
     };
 
     await appointmentsController.getAllAppointments(req, res);
@@ -24,13 +28,15 @@ describe('getAllAppointments', () => {
   });
 
   it('should handle errors and return 500 status', async () => {
-    jest.spyOn(mongodb.getDb().db().collection('appointments'), 'find').mockRejectedValue(new Error('Mocked error'));
+    jest
+      .spyOn(mongodb.getDb().db().collection('appointments'), 'find')
+      .mockRejectedValue(new Error('Mocked error'));
 
     const req = {};
     const res = {
       setHeader: jest.fn(),
       status: jest.fn(),
-      json: jest.fn(),
+      json: jest.fn()
     };
 
     await appointmentsController.getAllAppointments(req, res);

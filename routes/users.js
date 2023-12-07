@@ -8,12 +8,7 @@ const { requiresAuth } = require('express-openid-connect');
 
 router.get('/', requiresAuth(), usersController.getAllUsers);
 router.get('/:id', requiresAuth(), validation.checkId, usersController.getSingleUser);
-router.post(
-  '/',
-  requiresAuth(),
-  validation.saveusers,
-  usersController.createUser
-);
+router.post('/', requiresAuth(), validation.saveusers, usersController.createUser);
 router.put(
   '/:id',
   requiresAuth(),
