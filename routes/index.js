@@ -3,7 +3,7 @@ const router = express.Router();
 // DO NOT UNCOMMENT until Auth0 is working -Nina
 const { auth } = require('express-openid-connect');
 const auth0Controller = require('../controllers/auth0');
-const homeController = require('../controllers/index');
+// const homeController = require('../controllers/index');
 
 const swagger = require('./swagger');
 const appointments = require('./appointments');
@@ -21,6 +21,5 @@ router.use('/appointments', appointments);
 router.use('/pets', pets);
 router.use('/users', users);
 router.use('/veterinarians', veterinarians);
-router.use('/', homeController.home);
 
 module.exports = router;

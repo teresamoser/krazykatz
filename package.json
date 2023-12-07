@@ -4,7 +4,7 @@
   "description": "The team Project for people who love animals -Krazy katz Project API",
   "main": "server.js",
   "scripts": {
-    "tests": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles",    
+    "tests": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles",
     "start": "nodemon server.js",
     "dev_start": "node server.js",
     "lint": "eslint .",
@@ -32,6 +32,7 @@
     "mongodb": "^6.1.0",
     "mongoose": "^7.5.2",
     "react": "^18.2.0",
+    "supertest": "^6.3.3",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
     "validatorjs": "^3.22.1"

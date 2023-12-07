@@ -201,19 +201,19 @@
                 "medicalHistory": {
                   "type": "array",
                   "items": {
-                  "type": "object",
-                  "properties": {
-                    "vaccineType": {
-                    "example": "any"
-                  },
-                  "date": {
-                    "example": "M-D-YYYY"
-                  },
-                  "secondDose":{
-                    "example": "M-D-YYYY"
+                    "type": "object",
+                    "properties": {
+                      "vaccineType": {
+                        "example": "any"
+                      },
+                      "date": {
+                        "example": "M-D-YYYY"
+                      },
+                      "secondDose": {
+                        "example": "M-D-YYYY"
+                      }
+                    }
                   }
-                }
-            }
                 }
               }
             }
@@ -284,23 +284,23 @@
                 "medicalHistory": {
                   "type": "array",
                   "items": {
-                  "type": "object",
-                  "properties": {
-                    "vaccineType": {
-                    "example": "any"
-                  },
-                  "date": {
-                    "example": "M-D-YYYY"
-                  },
-                  "secondDose":{
-                    "example": "M-D-YYYY"
+                    "type": "object",
+                    "properties": {
+                      "vaccineType": {
+                        "example": "any"
+                      },
+                      "date": {
+                        "example": "M-D-YYYY"
+                      },
+                      "secondDose": {
+                        "example": "M-D-YYYY"
+                      }
+                    }
                   }
                 }
-            }
-                }
+              }
             }
           }
-        }
         ],
         "responses": {
           "204": {

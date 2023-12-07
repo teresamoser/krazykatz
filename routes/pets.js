@@ -7,18 +7,8 @@ const { requiresAuth } = require('express-openid-connect');
 
 router.get('/', requiresAuth(), petsController.getAllPets);
 router.get('/:id', requiresAuth(), validation.checkId, petsController.getSinglePet);
-router.post(
-  '/',
-  requiresAuth(),
-  validation.savepets,
-  petsController.createPet
-);
-router.put(
-  '/:id',
-  requiresAuth(),
-  validation.savepets,
-  petsController.updatePet
-);
+router.post('/', requiresAuth(), validation.savepets, petsController.createPet);
+router.put('/:id', requiresAuth(), validation.savepets, petsController.updatePet);
 router.delete('/:id', requiresAuth(), petsController.deletePet);
 
 module.exports = router;
