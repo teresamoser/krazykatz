@@ -1,9 +1,23 @@
 // Test for getAllAppointments function
 
+require('dotenv').config();
 const appointmentsController = require('../controllers/appointments');
-const mongodb = require('../db/connect');
+const { MongoClient } = require('mongodb');
 
 describe('getAllAppointments', () => {
+
+  let connection;
+  let db;
+
+  beforeAll(async () => {
+    connection = await MongoClient.connect(process.env.MONGODB_URI);
+    db = await connection.db('KrazyKatz');
+  });
+
+  afterAll(async () => {
+    await connection.close(true);
+  });
+
   it('should return all appointments', async () => {
     const mockAppointments = [
       {
